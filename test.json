@@ -31,5 +31,6 @@
       }
     ]
   }
-//  기존 yaml 파일도 생각해 보기
-// test vesion 2
+  // packer 와 ansible 어떻게 사용하는지 알아보기
+  // json 파일 만들어서 ami 생성되는지 확인하는 방법알아보기
+  // ansible plugin 있는거 같은데 확인해보기
