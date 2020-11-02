@@ -1,0 +1,36 @@
+{
+    "variables": {
+        "aws_access_key": "{{''}}",
+        "aws_secret_key": "{{''}}",
+        "region": "{{'ap-northeast-2c'}}",
+        "ami_name": "{{isotime \"060102-1504\"}}-packer-example-ami"
+    },
+    "builders": [
+        {
+            "type": "amazon-ebs",
+            "access_key": "{{user `aws_access_key`}}",
+            "secret_key": "{{user `aws_secret_key`}}",
+            "region": "{{user `region`}}",
+            "ami_name": "packer-example-{{timestamp}}",
+            "source_ami": "ami-0a10b2721688ce9d2",
+            "vpc_id": "vpc-8eb31ae5",
+            "subnet_id": "subnet-e2d4dbae",
+            "instance_type": "t2.micro",
+            "ssh_interface": "public_ip",
+            "ssh_username": "ec2-user",
+            "ami_description": "Amazon Linux Base AMI",
+            "tags": {
+                "Name": "{{user `ami_name` | clean_ami_name}}",
+                "BaseAMI_Id": "{{ .SourceAMI }}",
+                "BaseAMI_Name": "{{ .SourceAMIName }}",
+                "TYPE": "EC2.ami"
+            }
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "ansible",
+            "playbook_file": "playbook/main.yml"
+        }
+    ]
+}

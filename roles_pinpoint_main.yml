@@ -1,0 +1,9 @@
+- name : copy pinpoint-bootstrap jar
+  become : yes
+  copy : 
+    src : pinpoint-bootstrap-1.8.0.jar
+    dest : /usr/agent
+    owner : ec2-user
+    group : ec2-user
+    mode : 0755
+    

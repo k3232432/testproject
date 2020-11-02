@@ -1,0 +1,7 @@
+- name : Amazon Linux based Java AMI
+  host : all
+  roles : 
+    - common
+    - jdk8
+    - pinpoint
+    - nginx
