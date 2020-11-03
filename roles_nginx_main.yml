@@ -10,3 +10,5 @@
     - nginx-mod-stream
     - nginx-mod-http-perl
     - nginx-mod-mail
+
+# nginx 를 설치하는데 with_items로 다운로드가능

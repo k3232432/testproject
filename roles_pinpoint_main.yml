@@ -6,4 +6,5 @@
     owner : ec2-user
     group : ec2-user
     mode : 0755
-    
+
+    # 0755 로 권한 설정 jar파일이 위에서 만든 user/agent/로 설정

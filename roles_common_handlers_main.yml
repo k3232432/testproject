@@ -3,3 +3,5 @@
   service : 
     name : chronyd
     enabled : yes
+
+  # chronyd 를 시작하게끔 작성

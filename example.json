@@ -3,7 +3,7 @@
         "aws_access_key": "{{''}}",
         "aws_secret_key": "{{''}}",
         "region": "{{'ap-northeast-2c'}}",
-        "ami_name": "{{isotime \"060102-1504\"}}-packer-example-ami"
+        "ami_name": "{{isotime}}-packer-example-ami"
     },
     "builders": [
         {
@@ -34,3 +34,5 @@
         }
     ]
 }
+
+// ansible 사용할때 playbook/main.yml 파일을 찾을수 없는 오류생김 고쳐야됨
