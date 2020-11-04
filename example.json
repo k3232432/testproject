@@ -29,8 +29,8 @@
     ],
     "provisioners": [
         {
-            "type": "ansible",
-            "playbook_file": "playbook/main.yml"
+            "type": "ansible-local",
+            "playbook_file": "/home/ec2-user/packer-example/playbook/main.yml"
         }
     ]
 }

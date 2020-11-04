@@ -6,12 +6,12 @@
     "builders": [
       {
         "type": "amazon-ebs",
-        "source_ami": "Source가 될 Image의 id를 지정합니다.",
-        "vpc_id": "Instance가 올라갈 VPC 명을 지정해주시면 됩니다.",
-        "subnet_id": "Instance가 올라갈 Subnet 명을 지정합니다.",
+        "source_ami": "ami-0a10b2721688ce9d2",
+        "vpc_id": "vpc-8eb31ae5",
+        "subnet_id": "subnet-e2d4dbae",
         "security_group_id": "Instance가 올라가 있는 동안 사용할 Security Group을 지정합니다.",
         "instance_type": "t2.micro",
-        "ssh_interface": "private_ip",
+        "ssh_interface": "public_ip",
         "ssh_username": "ec2-user",
         "ami_name": "{{user `ami_name` | clean_ami_name}}",
         "ami_description": "OpenJDK 8 with Amazon Linux",
@@ -31,6 +31,3 @@
       }
     ]
   }
-  // packer 와 ansible 어떻게 사용하는지 알아보기
-  // json 파일 만들어서 ami 생성되는지 확인하는 방법알아보기
-  // ansible plugin 있는거 같은데 확인해보기
