@@ -2,7 +2,7 @@
     "variables": {
         "aws_access_key": "{{''}}",
         "aws_secret_key": "{{''}}",
-        "region": "{{'ap-northeast-2c'}}",
+        "region": "{{'ap-northeast-2'}}",
         "ami_name": "{{isotime}}-packer-example-ami"
     },
     "builders": [
@@ -29,10 +29,11 @@
     ],
     "provisioners": [
         {
-            "type": "ansible-local",
+            "type": "ansible",
             "playbook_file": "/home/ec2-user/packer-example/playbook/main.yml"
         }
     ]
 }
-
+//ap-northeast-2c 이거 안됨 ap-northeast-2 로 지정 해야함
+// ansible-local -> alsible 로 바꿔서 진행 해야함
 // ansible 사용할때 playbook/main.yml 파일을 찾을수 없는 오류생김 고쳐야됨

@@ -1,14 +1,9 @@
 - name : install nginx and modules
   become : yes
-  yum : pkg={{item}} state=latest
-  with_items:
-    - nginx
-    - nginx-mod-http-image-filter
-    - nginx-all-modules
-    - nginx-mod-http-xslt-filter
-    - nginx-mod-http-geoip
-    - nginx-mod-stream
-    - nginx-mod-http-perl
-    - nginx-mod-mail
+  amazon-linux-extras install : 
+    name : nginx
+    state : latest
 
+# amazon-linux-extras install nginx1 -y
+# 이거 안되서 일단 삭제하고 진행
 # nginx 를 설치하는데 with_items로 다운로드가능

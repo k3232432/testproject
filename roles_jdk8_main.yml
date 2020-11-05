@@ -8,6 +8,6 @@
   become : yes
   alternatives : 
     name : java
-    path : /usr/lib/jvm/jre-1.8.0-openjdk.x86_64/bin/java
+    path : /usr/sbin/alternatives
 
   # jdk 7버전을 삭제하고 8버전으로 설정

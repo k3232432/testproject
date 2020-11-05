@@ -31,4 +31,4 @@
   file : path=/usr/agent state=directory
 
   # git 다운로드, /user/agent/디렉토리 생성, ntp로 설정, asia/seoul로 시간설정
-
+ #이건 문제가 없음
