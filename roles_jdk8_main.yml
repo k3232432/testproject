@@ -8,6 +8,7 @@
   become : yes
   alternatives : 
     name : java
-    path : /usr/sbin/alternatives
-
+    path : /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.265.b01-1.amzn2.0.1.x86_64/bin/java
+    # /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.265.b01-1.amzn2.0.1.x86_64/bin
+#위의 경로로 다시 지정해줘야함
   # jdk 7버전을 삭제하고 8버전으로 설정
