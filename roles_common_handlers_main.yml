@@ -5,3 +5,4 @@
     enabled : yes
 
   # chronyd 를 시작하게끔 작성
+  # 문제 없음
