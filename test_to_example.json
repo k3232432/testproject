@@ -1,0 +1,30 @@
+{
+    "variables": {
+        "ami_name": "{{isotime}}-packer-example-ami"
+    },
+    "builders": [
+        {
+            "type": "amazon-ebs",
+            "ami_name": "packer-example-{{timestamp}}",
+            "source_ami": "ami-0a10b2721688ce9d2",
+            "vpc_id": "vpc-8eb31ae5",
+            "subnet_id": "subnet-e2d4dbae",
+            "instance_type": "t2.micro",
+            "ssh_interface": "public_ip",
+            "ssh_username": "ec2-user",
+            "ami_description": "Amazon Linux Base AMI",
+            "tags": {
+                "Name": "{{user `ami_name` | clean_resource_name }}",
+                "BaseAMI_Id": "{{ .SourceAMI }}",
+                "BaseAMI_Name": "{{ .SourceAMIName }}",
+                "TYPE": "EC2.ami"
+            }
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "ansible",
+            "playbook_file": "/var/lib/jenkins/workspace/github_connect/packer/playbook/main.yml"
+        }
+    ]
+}

@@ -9,7 +9,7 @@
         "source_ami": "ami-0a10b2721688ce9d2",
         "vpc_id": "vpc-8eb31ae5",
         "subnet_id": "subnet-e2d4dbae",
-        "security_group_id": "Instance가 올라가 있는 동안 사용할 Security Group을 지정합니다.",
+        "security_group_id": "sg-0d8ce18bee02b2d35",
         "instance_type": "t2.micro",
         "ssh_interface": "public_ip",
         "ssh_username": "ec2-user",
@@ -21,18 +21,13 @@
           "BaseAMI_Name": "{{ .SourceAMIName }}",
           "TEAM": "RAPA4team"
         },
-        "ami_users": ["이 AMI를 공유할 AWS Account ID 목록"]
+        "ami_users": ["k3232432@naver.com"]
       }
     ],
     "provisioners": [
       {
         "type": "ansible",
-        "playbook_file": "playbook/jdk8.yml"
+        "playbook_file": "playbook/main.yml"
       }
     ]
   }
-
-  // 프로젝트명 바꿔주고
-  // git 과 연동 과정 확인 하고
-  // ansible json 파일 바꿔줘야함
-  // iam user 로 사용가능 한지 확인..
